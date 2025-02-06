@@ -1,0 +1,30 @@
+@keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
+  
+  
+  .app-brand-text {
+  
+    background: linear-gradient(to right, #9d0909 20%, #990101 40%, #d51010 60%, #9d0909 80%);
+    background-size: 200% auto;
+  
+    color: #000;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3.5s linear infinite;
+  }
+
+
+  ::selection {
+    background-color: #ff2600; /* Cor de fundo da seleção */
+    color: #ffffff; /* Cor do texto selecionado */
+}
+
+input:focus {
+
+  outline: none; /* Remover contorno padrão do navegador */
+}
