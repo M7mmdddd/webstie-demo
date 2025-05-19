@@ -1,637 +1,74 @@
-<html lang="en"><head>
-  
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="author" content="@deathz">
-    <title>CIA - Screenshare</title>
-    <link rel="icon" href="images/redlogo_vazada_200.png" type="image/png">
-    <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/swiper.min.css">
-    <link rel="stylesheet" href="css/nice.css" id="stylesheet">
-
-    <meta name="twitter:card" content="summary_large_image">
-    <meta property="og:type" content="website">
-    <meta name="twitter:title" content="CIA Screenshare">
-    <meta name="theme-color" content="#ad0303">
-    <meta name="description" content="With the purpose of bringing knowledge, the CIA offers advanced knowledge about screens, with the aim of finding cheats on the computer and possible bypasses, we screen with the best applications and personalized commands to have a clean community!">
-    <meta property="og:description" content="With the purpose of bringing knowledge, the CIA offers advanced knowledge about screens, with the aim of finding cheats on the computer and possible bypasses, we screen with the best applications and personalized commands to have a clean community!">
-    <meta name="twitter:image" content="/assets/banner_anim.gif">
-
-    <script src=" https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js "></script>
-
-    <script>
-      function musica() {
-        let cia_msc = document.getElementById('cia_msc');
-        if(cia_msc.paused == true || !(cia_msc.currentTime > 0)) {
-          cia_msc.play();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bo M6er Terminal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Source Code Pro', monospace;
+            background-color: black;
+            color: #ddd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            text-align: left;
+            padding: 20px;
+            margin: 0;
+            overflow: hidden;
         }
-      }
-    
-      window.addEventListener('DOMContentLoaded', musica);
+        .container {
+            font-size: 32px;
+            line-height: 1.8;
+            white-space: pre;
+            overflow: hidden;
+            border-right: 3px solid #ddd;
+            padding-right: 10px;
+        }
+        .highlight {
+            color: red;
+            font-weight: bold;
+        }
+        .bold {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="terminal"></div>
+    <script>
+        const lines = [
+            "[+] ALShEhRi Is Now Into Your System...",
+            "[+] Dear admin",
+            "[+] Your anti cheat Is So SLow",
+            "[+] For Any Help Contact    Discord.gg/27   [+]"
+        ];
+        let index = 0;
+        let charIndex = 0;
+        let currentLine = "";
+
+        function typeEffect() {
+            if (index < lines.length) {
+                if (charIndex < lines[index].length) {
+                    currentLine += lines[index][charIndex];
+                    document.getElementById("terminal").innerHTML = currentLine + "_";
+                    charIndex++;
+                    setTimeout(typeEffect, 100);
+                } else {
+                    currentLine += "\n";
+                    index++;
+                    charIndex = 0;
+                    setTimeout(typeEffect, 700);
+                }
+            } else {
+                document.getElementById("terminal").innerHTML = currentLine;
+            }
+        }
+        typeEffect();
     </script>
-    
-    </head><body onclick="musica()" class="g-sidenav-show g-sidenav-pinned"><audio id="cia_msc" src="media/cia.mp3" loop=""></audio>
-
-  
-    <header class="header header-transparent" id="header-main">
-      <nav class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-dark bg-dark" id="navbar-main">
-        <div class="container px-lg-0 mt-1">
-          
-          <a class="navbar-brand mr-lg-3" href="/">
-            <img alt="logo" src="images/logo_vazada_cropped.png" id="navbar-logo" style="height: 3rem;">
-          </a>
-          <button class="navbar-toggler pr-0" type="button" data-toggle="collapse" data-target="#navbar-main-collapse" aria-controls="navbar-main-collapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbar-main-collapse">
-            <ul class="navbar-nav align-items-lg-center">
-              <li class="nav-item">
-                <a class="nav-link scroll-me" href="" style="font-weight: bold; color: #eee;">CIA</a>
-              </li><li class="nav-item">
-                <a href="#diff" class="nav-link scroll-me" style="font-weight: bold; color: #eee;">info</a>
-              </li><li class="nav-item">
-                <a class="nav-link scroll-me" href="#planos" style="font-weight: bold; color: #eee;">Download</a>
-              </li>
-            </ul>
-            <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-              <li class="nav-item d-lg-none d-xl-block" style="display: none !important">
-                <a class="nav-link" target="_blank" href="/sobre" style="color: #eee; font-weight: normal !important;">Por que nós?</a>
-              </li>
-              <li class="nav-item mr-0">
-                <a href="/dashboard" target="_blank" class="nav-link d-lg-none">Dashboard</a>
-                <a target="_blank" class="btn btn-sm btn-danger rounded-lg btn-icon rounded-lg d-none d-lg-inline-flex" data-toggle="tooltip" data-placement="left" title="" href="/dashboard">
-                  <span class="btn-inner--text ">Dashboard</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <div class="main-content" style="user-select: none !important;">
-      <section class="header-1 section-rotate bg-section-secondary" data-offset-top="#header-main" style="padding-top: 148px;">
-        <div id="particles-js" class="section-inner bg-gradient-primary" style="opacity: 0.4;"></div>  
-        <div class="bg-absolute-cover bg-size--contain d-flex align-items-center">
-       
-        </div>
-      
-        <div class="container py-5 pt-lg-6 d-flex align-items-center position-relative zindex-100">
-          <div class="col">
-            <div class="row">
-              <div class="col-lg-5 col-xl-6 text-center text-lg-left mt-4">
-                <div class="d-none d-lg-block mb-2 mt-4">
-                  <div class="alert alert-modern alert-dark rounded-lg">
-                    <span class="badge badge-danger rounded-lg">C.I.A</span>
-                    <span class="alert-content" style="font-weight: bold;vertical-align: middle;">O MELHOR E MAIOR DO MOMENTO 🔥</span>
-                  </div>
-                </div>
-                <div>
-                  <h2 class="text-white mb-2">
-                    <span class="display-4 app-brand-text" style="font-weight: bold;">CIA SCREENSHARE</span>
-                    <span class="d-block"><label class="app-brand-text" style="font-size: 1.5rem;margin-left: 0.3rem;">Centro Internacional de Anticheat</label></span>
-                  </h2>
-                  <p style="color: #eee !important; font-size: 0.9rem; margin-left: 0.3rem">Our purpose is to provide you with advanced knowledge on textiles.
-                    Advanced technologies are not intuitive to find cheats on the computer or possible bypass.
-                    We build custom applications and commands for a safe and clean community.</p>
-                  <div class="mt-4">
-                    
-                    <a href="#diff" class="btn btn-danger rounded-lg hover-translate-y-n3 btn-icon d-none d-xl-inline-block scroll-me">
-                      <span class="btn-inner--icon"> // </span>
-                      <span class="btn-inner--text">Find out more</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="sct-page-examples" class="slice bg-section-secondary">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4 col-sm-6">
-              <div class="card text-center hover-shadow-lg hover-translate-y-n10">
-                <div class="px-4 pt-5 pb-2">
-                  <svg style="width: 3.5rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M309 106c11.4-7 19-19.7 19-34c0-22.1-17.9-40-40-40s-40 17.9-40 40c0 14.4 7.6 27 19 34L209.7 220.6c-9.1 18.2-32.7 23.4-48.6 10.7L72 160c5-6.7 8-15 8-24c0-22.1-17.9-40-40-40S0 113.9 0 136s17.9 40 40 40c.2 0 .5 0 .7 0L86.4 427.4c5.5 30.4 32 52.6 63 52.6H426.6c30.9 0 57.4-22.1 63-52.6L535.3 176c.2 0 .5 0 .7 0c22.1 0 40-17.9 40-40s-17.9-40-40-40s-40 17.9-40 40c0 9 3 17.3 8 24l-89.1 71.3c-15.9 12.7-39.5 7.5-48.6-10.7L309 106z"></path></svg>
-                </div>
-                <div class="px-4 pb-5">
-                  <h5>Leader in Screenshare</h5>
-                  <p class="text-muted">
-                    Our team is always ahead of everyone in content and quality, with constant updates and exclusive support</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-              <div class="card text-center hover-shadow-lg hover-translate-y-n10">
-                <div class="px-4 pt-5 pb-2">
-                  <svg style="width: 3.5rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M160 0c-17.7 0-32 14.3-32 32s14.3 32 32 32h50.7L9.4 265.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L256 109.3V160c0 17.7 14.3 32 32 32s32-14.3 32-32V32c0-17.7-14.3-32-32-32H160zM576 80a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM448 208a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM400 384a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm48 80a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm128 0a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM272 384a48 48 0 1 0 0-96 48 48 0 1 0 0 96zm48 80a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zM144 512a48 48 0 1 0 0-96 48 48 0 1 0 0 96zM576 336a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm-48-80a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"></path></svg>
-                </div>
-                <div class="px-4 pb-5">
-                  <h5>Future Vision</h5>
-                  <p class="text-muted">
-                    We enable students to join Screenshare teams in partner cities, enabling growth and evolution</p>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-              <div class="card text-center hover-shadow-lg hover-translate-y-n10">
-                <div class="px-4 pt-5 pb-2">
-                  <svg style="width: 3.5rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                </div>
-                <div class="px-4 pb-5">
-                  <h5>Flexibility</h5>
-                  <p class="text-muted">Our course can be used both for personal use and to analyze any other suspicious player on screens</p>
-                </div>
-              </div>
-            </div>
-        
-          </div>
-        </div>
-        <div class="fluid-paragraph text-center mt-5">
-          <p style="opacity: 0.5; font-size: 0.9rem;">
-            <strong class="text-primary">*A CIA</strong><span class="text-muted">
-              enables you to evolve in the Screenshare landscape by supporting and providing quality content, in addition to our exceptional support, but your success depends solely on you</span>
-          </p>
-        </div>
-      </section>
-      <section class="slice slice-lg" style="background-color: #111010" id="diff">
-        <div class="container mb-3">
-          <div class="row row-grid justify-content-around align-items-center">
-            <div class="col-lg-5 order-lg-2">
-              <div class=" pr-lg-4">
-                <h5 class=" h3" style="font-size: 1.5rem;">RECOGNITION IN THE SCREENSHARE COMMUNITY</h5>
-                <p class="text-muted mt-2 mb-3">With the superior quality of teaching that <span class="app-brand-text" style="font-weight: bold;">CIA</span> offers, we have become the reference when it comes to quality and dedication</p><p class="text-muted mb-5" style="font-size: 0.9rem;">Our team and support will make you sure of choosing <span class="app-brand-text">CIA</span> by showing our quality</p><a class="link link-underline-primary scroll-me" href="#planos">Discover the plans</a>
-              </div>
-            </div>
-            <div class="col-lg-6 order-lg-1">
-              <img alt="Image placeholder" class="img-fluid img-center" src="images/undraw_businessman_e7v0.svg" style="width: 18rem;">
-            </div>
-          </div>
-        </div>
-     
-      </section>
-      <section class="slice slice-xl bg-gradient-primary" id="sct-call-to-action">
-        <a href="#sct-call-to-action" class="tongue tongue-up " data-scroll-to="">
-       
-        </a>
-        <div class="container text-center">
-          <div class="row">
-    
-               <div class="col-12">
-              <div class="swiper-js-container overflow-hidden">
-                <div class="swiper-container swiper-container-initialized swiper-container-horizontal" data-swiper-items="1" data-swiper-space-between="0" data-swiper-sm-items="2" data-swiper-xl-items="3">
-                  <div class="swiper-wrapper" style="transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;">
-                    <div class="swiper-slide p-4 swiper-slide-active" style="width: 338.333px;">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div>
-                              <img src="images/logo%20com%20fundo%20%28512x512%29-bymillenium.png" class="avatar  rounded-circle">
-                            </div>
-                            <div class="pl-3">
-                              <h5 class="h6 mb-0 text-muted">Ryu MD</h5>
-
-                            </div>
-                          </div>
-                          <p class="mt-4 lh-180 text-muted">O @Madara é simplesmente foda... hoje decidir seguir minha jornada como SS, as aulas é extremamente detalhada... não é atoa que é um dos melhores do momento!</p>
-                          <span class="static-rating static-rating-sm" style="position: absolute;bottom: 0.5rem;right: 37.9%;">
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide p-4 swiper-slide-next" style="width: 338.333px;">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div>
-                              <img src="images/logo%20com%20fundo%20%28512x512%29-bymillenium.png" class="avatar  rounded-circle">
-                            </div>
-                            <div class="pl-3">
-                              <h5 class="h6 mb-0 text-muted">Byto</h5>
-
-                            </div>
-                          </div>
-                          <p class="mt-4 lh-180 text-muted">Muito bom o curso, as aulas ao vivo são boas e da pra tirar duvida a qualquer hora pois sempre tem algum auxiliar ativo, toda cidade que eu entro no discord e procuro um trampo, eu chego e falo que tenho o curso da ciass e eles reconhecem e ja dão uma moral</p>
-                          <span class="static-rating static-rating-sm" style="position: absolute;bottom: 0.5rem;right: 37.90%;">
-                            <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                            <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                            <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                            <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                            <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide p-4" style="width: 338.333px;">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div>
-                              <img src="images/logo%20com%20fundo%20%28512x512%29-bymillenium.png" class="avatar  rounded-circle">
-                            </div>
-                            <div class="pl-3">
-                              <h5 class="h6 mb-0 text-muted">Henrique</h5>
-
-                            </div>
-                          </div>
-                          <p class="mt-4 lh-180 text-muted">Aula muito boa super recomendo o curso em menos de 1 mês já estou telando, tem várias aulas ao vivo para tirar dúvidas, sempre tem instrutor para tirar suas dúvidas também</p>
-                          <span class="static-rating static-rating-sm" style="position: absolute;bottom: 0.5rem;right: 37.9%;">
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide p-4" style="width: 338.333px;">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div>
-                              <img src="images/logo%20com%20fundo%20%28512x512%29-bymillenium.png" class="avatar  rounded-circle">
-                            </div>
-                            <div class="pl-3">
-                              <h5 class="h6 mb-0 text-muted">Castiel</h5>
-
-                            </div>
-                          </div>
-                          <p class="mt-4 lh-180 text-muted">Mesmo eu ja tendo conhecimento sobre antibypass, e telagem, com o curso conseguir apronfudar um pouco mais e consegui aperfeiçoar meus metados</p>
-                          <span class="static-rating static-rating-sm" style="position: absolute;bottom: 0.5rem;right: 37.9%;">
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide p-4" style="width: 338.333px;">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div>
-                              <img src="images/logo%20com%20fundo%20%28512x512%29-bymillenium.png" class="avatar  rounded-circle">
-                            </div>
-                            <div class="pl-3">
-                              <h5 class="h6 mb-0 text-muted">Becker</h5>
-
-                            </div>
-                          </div>
-                          <p class="mt-4 lh-180 text-muted">A rapaziada da Cia amassa em qualquer quesito, recomendo demais tanto o curso de screen share com o curso de otimização. Os cara são nota mil, e somente agradecer ao parceiro @Mariotti e toda equipe pela atenção</p>
-                          <span class="static-rating static-rating-sm" style="position: absolute;bottom: 0.5rem;right: 37.9%;">
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide p-4" style="width: 338.333px;">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div>
-                              <img src="images/logo%20com%20fundo%20%28512x512%29-bymillenium.png" class="avatar  rounded-circle">
-                            </div>
-                            <div class="pl-3">
-                              <h5 class="h6 mb-0 text-muted">Geozinn</h5>
-
-                            </div>
-                          </div>
-                          <p class="mt-4 lh-180 text-muted">Melhor curso que tem, Em menos de 2 horas de curso já consegui pegar um gosth</p>
-                          <span class="static-rating static-rating-sm" style="position: absolute;bottom: 0.5rem;right: 37.9%;">
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="swiper-slide p-4" style="width: 338.333px;">
-                      <div class="card h-100">
-                        <div class="card-body">
-                          <div class="d-flex align-items-center">
-                            <div>
-                              <img src="images/logo%20com%20fundo%20%28512x512%29-bymillenium.png" class="avatar  rounded-circle">
-                            </div>
-                            <div class="pl-3">
-                              <h5 class="h6 mb-0 text-muted">dk</h5>
-
-                            </div>
-                          </div>
-                          <p class="mt-4 lh-180 text-muted">@migue é bom demais ensinando, explica tudo certinho sem erros 10000/10</p>
-                          <span class="static-rating static-rating-sm" style="position: absolute;bottom: 0.5rem;right: 37.9%;">
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          <svg style="width: 0.75rem; fill: rgb(141, 9, 9)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"></path></svg>
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                   
-               
-                  </div>
-                <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
-              
-                <div class="swiper-pagination w-100 mt-4 d-flex align-items-center justify-content-center swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span></div>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-        
-    
-      </section>
-      <section class="slice slice-lg bg-section-secondary overflow-hidden">
-        <div class="bg-absolute-cover bg-size--contain d-flex align-items-center"> 
-        </div>
-        <div class="container position-relative zindex-100">
-          <div class="mb-5 px-3 text-center">
-            <h3 class=" mt-1">Equipe da <strong>CIA</strong></h3>
-            <div class="fluid-paragraph mt-2">
-              <p class="text-muted" style="font-size: 0.9rem !important;">Criadores, idealizadores e desenvolvedores da equipe CIA, que gerenciam e administram todo o projeto</p>
-            </div>
-          </div>
-          <div class="row justify-content-center">
-          
-            <div class="col-lg-4 d-none">
-              <div class="card px-3" style="height: 100%;">
-                <div class="card-body py-5">
-                  <div class="d-flex align-items-center">
-                  <img class="icon bg-gradient-primary text-white rounded-circle icon-shape shadow-primary" style="width: 4rem; border-radius: 50%" src="images/mariotti-pfp.png">
-                    <div class="icon-text pl-4">
-                      <h5 class="mb-0">Fundador</h5>
-                      <label class="mb-0 " style="color: #eee">Mariotti</label>
-              
-                    </div>
-                  </div>
-                  <p class="mt-4 mb-0 text-muted">Fundador principal, gestor da CIA e idealizador do projeto</p>
-                </div>
-              </div>
-            </div>
-          
-            <div class="col-lg-4">
-              <div class="card px-3" style="height: 100%;">
-                <div class="card-body py-5">
-                  <div class="d-flex align-items-center">
-                  <img class="icon bg-gradient-primary text-white rounded-circle icon-shape shadow-primary" style="width: 4rem; border-radius: 50%" src="images/mad-pfp.png">
-                    <div class="icon-text pl-4">
-                      <h5 class="mb-0">Fundador</h5>
-                      <label class="mb-0" style="color: #eee">Madara</label>
-              
-                    </div>
-                  </div>
-                  <p class="mt-4 mb-0 text-muted">Administração sobre a manutenção do curso e especialista em bypass </p>
-                </div>
-              </div>
-            </div>
-        
-          </div>
-        </div>
-      </section>
-   
-      <section class="slice slice-lg" style="background-color: #111010;" id="planos">
-        <div class="container">
-          <div class="pricing-container">
-            <div class="text-center mb-5">
-              <div class="btn-group" role="group">
-                <button type="button" class="btn btn-secondary active" id="btn_curso">Free Download</button>
-                <button type="button" class="btn btn-secondary" id="btn_scanner">Buy Scanner</button>
-              </div>
-            </div>
-            <div id="section_curso" class="pricing card-group flex-column flex-lg-row mb-3" style="justify-content: center;">
-              <div class="card card-pricing popular  text-center px-3 mb-5 mb-lg-0 col-lg-4" style="background: #161616;">
-                <span class="h6 w-60 mx-auto px-4 py-1 rounded-bottom bg-primary text-white">Free Scanner</span>
-                <div class="card-header py-3 border-0">
-                  <div class="h1 text-primary text-center mb-0">CIA<span class="price">-Scanner</span><span class="h6 ml-2"></span></div>
-                </div>
-                <div class="card-body delimiter-top">
-                  <ul class="list-unstyled mb-2" style="scale: 1.05">
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Parse and analyze BAM (Background Activity Moderator) data for timestamps, usn modifications and unsigned/flagged files with yara rules.</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Analyze Windows Prefetch files for unsigned, flagged files using yara and timestamps for execution.</li>
-                  </ul><a href="files/scan-FBH928.exe" target="_blank"><button type="button" class="btn btn-sm btn-danger mb-3 mt-3">Download</button></a>
-                </div>
-              </div>
-              
-             
-            </div>
-
-            <div id="section_scanner" class="pricing card-group flex-column flex-lg-row mb-3" style="justify-content: center; display: none !important;">
-              <div class="card card-pricing popular  text-center px-3 mb-5 mb-lg-0 col-lg-4" style="background: #161616; border-radius: 0.3rem !important;scale: 0.92;">
-               
-                <div class="card-header py-3 border-0">
-                  <div class="h1 text-primary text-center mb-0 mt-4"><div class="text-primary text-center mb-0" style="font-size: 0.9rem;text-decoration: line-through;">R$<span>150,00</span></div>R$<span>125,00</span><span class="h6 ml-2">/mês</span></div>
-                  
-                  
-                  
-                  
-                </div>
-                <div class="card-body delimiter-top">
-                  <ul class="list-unstyled mb-2" style="scale: 1.05">
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Current and updated strings and detections</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Consistency in detections, with accuracy greater than 99%</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Efficient and optimized for complete user analytics</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Direct and precise analysis of everything necessary for your screen</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ 24-hour support to answer any questions about the scanner</li>
-                  </ul><a href="https://discord.gg/rJDe8UrDmz" target="_blank"><button type="button" class="btn btn-sm btn-danger mb-3 mt-3">// Comprar Scanner</button></a>
-                </div>
-              </div><div class="card card-pricing popular  text-center px-3 mb-5 mb-lg-0 col-lg-4" style="background: #161616; border-radius: 0.3rem !important;margin: 0rem 1rem;">
-               
-                <div class="card-header py-3 border-0">
-                  <div class="h1 text-primary text-center mb-0 mt-4"><div class="text-primary text-center mb-0" style="font-size: 0.9rem;text-decoration: line-through;">R$<span>1.200,00</span></div>R$<span>800,00</span><span class="h6 ml-2">/ano</span></div>
-                  
-                  
-                  
-                  
-                </div>
-                <div class="card-body delimiter-top">
-                  <ul class="list-unstyled mb-2" style="scale: 1.05">
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Current and updated strings and detections</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Consistency in detections, with accuracy greater than 99%</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Efficient and optimized for complete user analytics</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Direct and precise analysis of everything necessary for your screen</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ 24-hour support to answer any questions about the scanner</li>
-                  </ul><a href="https://discord.gg/rJDe8UrDmz" target="_blank"><button type="button" class="btn btn-sm btn-danger mb-3 mt-3">// Comprar Scanner</button></a>
-                </div>
-              </div><div class="card card-pricing popular  text-center px-3 mb-5 mb-lg-0 col-lg-4" style="background: #161616; border-radius: 0.3rem !important;scale: 0.92;">
-               
-                <div class="card-header py-3 border-0 px-1">
-                  <div class="h1 text-primary text-center mb-0 mt-4"><div class="text-primary text-center mb-0" style="font-size: 0.9rem;text-decoration: line-through;">R$<span>600,00</span></div>R$<span>450,00</span><span class="h6 ml-2">/trimestral</span></div>
-                  
-                  
-                  
-                  
-                </div>
-                <div class="card-body delimiter-top">
-                  <ul class="list-unstyled mb-2" style="scale: 1.05">
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Current and updated strings and detections</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Consistency in detections, with accuracy greater than 99%</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Efficient and optimized for complete user analytics</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ Direct and precise analysis of everything necessary for your screen</li>
-                    <li class="text-muted" style="font-size: 0.9rem;">✓ 24-hour support to answer any questions about the scanner</li>
-                  </ul><a href="https://discord.gg/rJDe8UrDmz" target="_blank"><button type="button" class="btn btn-sm btn-danger mb-3 mt-3">// Comprar Scanner</button></a>
-                </div>
-              </div>
-
-              
-       
-          
-             
-            </div>
-          </div>
-      
-        </div>
-      </section>
-    </div>
-    <footer id="footer-main " style="background-color: #0b0a0a">
-        <div class="container">
-
-          <div class="row align-items-center justify-content-center py-2 mt-2">
-            <div class="col-md-6  justify-content-center" style="display: flex;">
-              <div class="copyright text-sm font-weight-bold text-center text-md-left text-muted">
-                © 2022-2024 <a href="https://discord.ciascreenshare.com" class="font-weight-bold" target="_blank">CIA Screenshare</a> - Todos direitos reservados
-              </div>
-            </div>
-            
-          </div>
-        </div>
-      
-    </footer>
-    <script src="js/nice.core.js"></script>
-    <script src="js/swiper.min.js"></script>
-    <script src="js/nice.js"></script><div class="mask-body mask-body-light d-xl-none" data-action="sidenav-unpin" data-target="undefined"></div><div class="mask-body mask-body-light d-xl-none" data-action="sidenav-unpin" data-target="undefined"></div>
-    <script src="js/demo.js"></script>
-    <script defer="" src="js/works.js"></script>
-  
-    <script>
-      particlesJS("particles-js", {
-  "particles": {
-    "number": {
-      "value": 80,
-      "density": {
-        "enable": true,
-        "value_area": 800
-      }
-    },
-    "color": {
-      "value": "#ffffff"
-    },
-    "shape": {
-      "type": "circle",
-      "stroke": {
-        "width": 0,
-        "color": "#000000"
-      },
-      "polygon": {
-        "nb_sides": 5
-      },
-      "image": {
-        "src": "img/github.svg",
-        "width": 100,
-        "height": 100
-      }
-    },
-    "opacity": {
-      "value": 0.5,
-      "random": false,
-      "anim": {
-        "enable": false,
-        "speed": 1,
-        "opacity_min": 0.1,
-        "sync": false
-      }
-    },
-    "size": {
-      "value": 3,
-      "random": true,
-      "anim": {
-        "enable": false,
-        "speed": 40,
-        "size_min": 0.1,
-        "sync": false
-      }
-    },
-    "line_linked": {
-      "enable": true,
-      "distance": 150,
-      "color": "#ffffff",
-      "opacity": 0.4,
-      "width": 1
-    },
-    "move": {
-      "enable": true,
-      "speed": 1.666902811231592,
-      "direction": "none",
-      "random": true,
-      "straight": false,
-      "out_mode": "out",
-      "bounce": false,
-      "attract": {
-        "enable": true,
-        "rotateX": 600,
-        "rotateY": 1200
-      }
-    }
-  },
-  "interactivity": {
-    "detect_on": "canvas",
-    "events": {
-      "onhover": {
-        "enable": true,
-        "mode": "grab"
-      },
-      "onclick": {
-        "enable": true,
-        "mode": "push"
-      },
-      "resize": true
-    },
-    "modes": {
-      "grab": {
-        "distance": 400,
-        "line_linked": {
-          "opacity": 1
-        }
-      },
-      "bubble": {
-        "distance": 400,
-        "size": 40,
-        "duration": 2,
-        "opacity": 8,
-        "speed": 3
-      },
-      "repulse": {
-        "distance": 200,
-        "duration": 0.4
-      },
-      "push": {
-        "particles_nb": 4
-      },
-      "remove": {
-        "particles_nb": 2
-      }
-    }
-  },
-  "retina_detect": true
-});
-
-      </script>
-
-  
-  </body></html>
+</body>
+</html>
